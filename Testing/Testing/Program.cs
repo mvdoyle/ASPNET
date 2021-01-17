@@ -6,7 +6,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-
+/// <summary>
+/// This is a challenge to really understand.
+/// </summary>
 namespace Testing
 {
     public class Program
