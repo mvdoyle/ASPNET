@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using Dapper;
 using Testing.Models;
 
 namespace Testing
@@ -16,8 +17,12 @@ namespace Testing
 
         public IEnumberable<Product> GetAllProducts()
         {
-            return _conn.Query<Product>("SELECT * FROM PRODUCTS;");
+            return (IEnumberable<Product>)_conn.Query<Product>("SELECT * FROM PRODUCTS;");
         }
 
+        IEnumerable<Product> IProductRepository.GetAllProducts()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
