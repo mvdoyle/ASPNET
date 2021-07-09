@@ -1,0 +1,47 @@
+﻿@model Product
+
+<h3>@Model.ProductName Information</h3>
+
+<table class="table">
+    <tr>
+        <th>Key</th>
+        <th>SubcategoryKey</th>
+        <th>SKU</th>
+        <th>Name</th>
+        <th>ModelName</th>
+        <th>Description</th>
+        <th>Color</th>
+        <th>Size</th>
+        <th>Style</th>
+        <th>Cost</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>@Model.ProductKey</td>
+        <td>@Model.ProductSubcategoryKey</td>
+        <td>@Model.ProductSKU</td>
+        <td>@Model.ProductName</td>
+        <td>@Model.ModelName</td>
+        <td>@Model.ProductDescription</td>
+        <td>@Model.ProductColor</td>
+        <td>@Model.ProductSize</td>
+        <td>@Model.ProductStyle</td>
+        <td>@Model.ProductCost</td>
+        <td>@Model.ProductPrice</td>
+    </tr>
+
+</table>
+
+<div style="display: block">
+    <a href="/Product/UpdateProduct/@Model.ProductKey">Update this Product</a>
+</div>
+
+<div style="display: block">
+    @using (Html.BeginForm("DeleteProduct", "Product", "Post"))
+    {
+        <input type="hidden" asp-for="ProductKey" value="@Model.ProductKey" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this product" />
+    }
+</div>
+
+
