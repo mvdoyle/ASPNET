@@ -24,7 +24,7 @@ namespace Testing
 
         public Product GetProduct(int id)
         {
-            return  _conn.QuerySingle<Product>("SELECT * FROM adventureworks_products WHERE ProductKey = @id",
+            return _conn.QuerySingle<Product>("SELECT * FROM adventureworks_products WHERE ProductKey = @id",
                 new { id = id });
 
         }
