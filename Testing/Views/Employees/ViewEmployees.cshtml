@@ -1,0 +1,27 @@
+﻿@model Employees
+
+<h3>@Model.LastName Information</h3>
+
+<table class="table">
+    <tr>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Middle Initial</th>
+        <th>Last Name</th>
+        <th>Email Address</th>
+        <th>Phone Number</th>
+        <th>Title</th>
+        <th>Date Of Birth</th>
+    </tr>
+    <tr>
+        <td>@Model.EmployeeID</td>
+        <td>@Model.FirstName</td>
+        <td>@Model.MiddleInitial</td>
+        <td>@Model.LastName</td>
+        <td>@Model.EmailAddress</td>
+        <td>@Model.PhoneNumber</td>
+        <td>@Model.Title</td>
+        <td>@Model.DateOfBirth</td>
+    </tr>
+
+</table>
