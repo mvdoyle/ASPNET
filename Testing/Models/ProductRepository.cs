@@ -18,4 +18,9 @@ public class ProductRepository : IProductRepository
     {
         return _conn.Query<Product>("SELECT * FROM products");
     }
+
+    public Product GetProduct(int id)
+    {
+        return _conn.QuerySingle<Product>("SELECT * FROM products WHERE ProductID = @id", new { id = id });
+    }
 }
